@@ -50,7 +50,7 @@
 
 (use-package ghostel
   :ensure t
-  :if (eq sytem-type 'gnu/linux)
+  :if (eq system-type 'gnu/linux)
   :bind
   (("<leader> ot" . #'ghostel)))
 
