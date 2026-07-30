@@ -24,8 +24,6 @@
   (("<leader> gt" . #'git-timemachine-toggle))
   :config
   (evil-define-key 'normal 'git-timemachine-mode-map
-    (kbd "C-p") #'git-timemachine-show-previous-revision
-    (kbd "C-n") #'git-timemachine-show-next-revision
     (kbd "gb")  #'git-timemachine-blame
     (kbd "gtc") #'git-timemachine-show-commit))
 
