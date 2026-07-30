@@ -1,5 +1,9 @@
 ;; nto-prog.el -*- lexical-binding: t; -*-
 
+(require 'treesit)
+(add-to-list 'treesit-language-source-alist
+             '(typst "https://github.com/uben0/tree-sitter-typst.git"))
+
 (add-to-list 'load-path (expand-file-name "modules/lang" user-emacs-directory))
 
 (add-hook 'java-mode-hook 'subword-mode)
