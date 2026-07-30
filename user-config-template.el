@@ -42,7 +42,7 @@
 (use-package anti-zenburn-theme
   :ensure t)
 
-(use-package green-is-the-new-black-theme
+(use-package gruber-darker-theme
   :ensure t)
 
 (provide 'user-config)
