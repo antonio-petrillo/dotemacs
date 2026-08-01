@@ -21,15 +21,16 @@
   (evil-disable-insert-state-bindings t)
   (evil-respect-visual-line-mode t)
   (evil-undo-system 'undo-tree)
-  (evil-want-C-i-jumpt t)
+  (evil-want-C-i-jump t)
   (evil-want-C-u-scroll nil)
   (evil-want-C-d-scroll nil)
   (evil-want-keybinding nil)
-  (evil-want-Y-yank-to-eol t)
   (evil-split-window-below t)
   (evil-split-window-right t)
   (evil-want-fine-undo t)
-  (evil-toggle-key (kbd "C-q C-q C-z"))
+  (evil-toggle-key "")
+  :init
+  (setq evil-want-Y-yank-to-eol t)
   :config
   (evil-set-leader nil (kbd "M-SPC"))
   (evil-set-leader '(normal visual replace operator motion) (kbd "SPC"))
@@ -141,15 +142,15 @@
   :commands evil-snipe-local-mode evil-snipe-override-local-mode
   :hook ((evil-mode . evil-snipe-override-mode)
          (evil-mode . evil-snipe-mode))
+  :custom
+  (evil-snipe-smart-case t)
+  (evil-snipe-scope 'buffer)
+  (evil-snipe-repeat-scope 'visible)
+  (evil-snipe-char-fold t)
   :init
   (evil-define-key 'motion evil-snipe-override-local-mode-map
     "t" nil
-    "T" nil)
-
-  (setq evil-snipe-smart-case t
-        evil-snipe-scope 'buffer
-        evil-snipe-repeat-scope 'visible
-        evil-snipe-char-fold t))
+    "T" nil))
 
 (use-package evil-visualstar
   :ensure t
