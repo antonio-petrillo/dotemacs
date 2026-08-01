@@ -2,3 +2,4 @@
 flycheck*.el
 org-persist/
 tree-sitter/
+/tramp

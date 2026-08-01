@@ -12,6 +12,9 @@
 			    (toggle-truncate-lines 1)
                             (setq-local display-line-numbers 'relative)))
 
+(defmacro nto--with-tab-with (n)
+  `(lambda () (setq-local tab-width ,n)))
+
 (require 'nto-lua)
 (require 'nto-odin)
 (require 'nto-elixir)
