@@ -18,12 +18,7 @@
          ("<localleader> ss" . #'org-schedule)
          ("<localleader> sd" . #'org-deadline)
          ("<localleader> t" . #'org-agenda-todo)
-         ("<localleader> f" . #'org-footnote-new))
-   (:map org-agenda-mode-map
-         ("n" . #'org-agenda-next-item)
-         ("p" . #'org-agenda-previous-item)
-         ("j" . #'org-agenda-next-item)
-         ("k" . #'org-agenda-previous-item)))
+         ("<localleader> f" . #'org-footnote-new)))
   :custom
   (org-directory nto--org-directory)
   (org-M-RET-may-split-line '((default . nil)))
@@ -85,12 +80,21 @@
      ( 0700 0800 0900 1000 1100 1200
        1300 1400 1500 1600 1700 1800
        1900 2000 2100 2200 2300 )
-     "" "")
+     "" ""))
   (org-agenda-default-appointment-duration nil)
 
   :config
   (add-hook 'org-mode-hook #'visual-line-mode)
   (plist-put org-format-latex-options :scale 2.0))
+
+(use-package org-mode
+  :after org-mode
+  :bind
+  (:map org-agenda-mode-map
+        ("n" . #'org-agenda-next-item)
+        ("p" . #'org-agenda-previous-item)
+        ("j" . #'org-agenda-next-item)
+        ("k" . #'org-agenda-previous-item)))
 
 (use-package org-modern
   :ensure t

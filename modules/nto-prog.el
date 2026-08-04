@@ -34,12 +34,9 @@
 
 (use-package editorconfig
   :ensure nil
-  :after ws-butler
   :custom
   (editorconfig-trim-whitespaces-mode #'ws-butler-mode)
   :config
-  (add-to-list 'editorconfig-exclude-regexps
-               "\\.\\(zip\\|\\(doc\\|xls\\|ppt\\)x\\)\\'")
   (setq editorconfig-get-properties-function #'editorconfig-get-properties)
   (editorconfig-mode 1))
 

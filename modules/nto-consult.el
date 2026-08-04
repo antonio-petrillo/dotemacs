@@ -55,18 +55,6 @@
          ("C-x C-d" . #'consult-dir)
          ("C-x C-j" . #'consult-dir-jump-file))))
 
-(use-package consult-notes
-  :ensure (:type git :host codeberg :repo "mclear-tools/consult-notes")
-  :commands (consult-notes
-             consult-notes-search-in-all-notes)
-  :bind
-  ("<leader> n." . #'consult-notes)
-  :config
-  ;; (setq consult-notes-file-dir-sources `(("Denote"  ?d  ,(denote-directory))))
-  (when (locate-library "denote")
-    (consult-notes-denote-mode))
-  (setq consult-notes-denote-files-function (lambda () (denote-directory-files nil t t))))
-
 (use-package consult-todo
   :ensure t
   :bind

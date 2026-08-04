@@ -11,6 +11,7 @@
    ("<leader> nr" . #'denote-rename-file-using-front-matter)
    ("<leader> nu" . #'nto--unsorted-note)
    ("<leader> ni" . #'denote-insert-link)
+   ("<leader> nl" . #'denote-insert-link)
    ("<leader> nb" . #'denote-backlinks)
    ("<leader> ng" . #'denote-grep)
    ("<leader> nd" . #'denote-dired))
@@ -22,7 +23,7 @@
            (keywords (denote-keywords-prompt))
            (extension (concat "." (completing-read "Extension: " '("typ" "tex" "org" "md" "txt"))))
            (id (format-time-string denote-date-identifier-format))
-           (filename (denote-format-file-name nto--notes-unsorted-dir id keywords title (if (string= extension ".")) "")))
+           (filename (denote-format-file-name nto--notes-unsorted-dir id keywords title extension "")))
       (find-file filename)))
 
   (defun nto--dired-rename-using-denote-filescheme (input-path output-path &optional move-if-non-nil)
@@ -75,7 +76,7 @@
     (denote-journal-directory nto--journal-dir)
     (denote-journal-keyword "journal"))
 
-(use-package consult-notes
+(use-package consult-denote
   :ensure t
   :after (denote consult)
   :bind

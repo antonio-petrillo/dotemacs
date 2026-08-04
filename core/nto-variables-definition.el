@@ -15,8 +15,7 @@
 (defvar nto--journal-dir
   (expand-file-name "journal/" nto--notes-dir-parent))
 
-(defvar nto--notes-unsorted-dir
-  (expand-file-name "unsorted/" nto--notes-dir-parent))
+(defvar nto--notes-unsorted-dir nto--notes-dir)
 
 (defvar nto--notes-assets-dir
   (expand-file-name "assets/" nto--notes-dir-parent))
