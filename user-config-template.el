@@ -6,7 +6,8 @@
   (pcase system-type
     ('gnu/linux
      (progn
-       (setq mono-spaced-font "Iosevka Term"
+       (setq ;; mono-spaced-font "Iosevka Term"
+             mono-spaced-font "BigBlueTermPlus Nerd Font"
 	     proportionately-spaced-font "Roboto Serif")))
     ('windows-nt (progn
 		   (setq mono-spaced-font "Iosevka"
@@ -15,7 +16,7 @@
   (set-face-attribute
    'default nil
    :family mono-spaced-font
-   :height 180)
+   :height 100)
 
   (set-face-attribute
    'fixed-pitch nil

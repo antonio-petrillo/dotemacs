@@ -8,6 +8,9 @@
 	(insert "~/"))
     (call-interactively #'self-insert-command)))
 
+(use-package compat
+  :ensure t)
+
 (use-package vertico
   :ensure t
   :hook (elpaca-after-init-hook . vertico-mode)
