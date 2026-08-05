@@ -12,6 +12,14 @@
 			    (toggle-truncate-lines 1)
                             (setq-local display-line-numbers 'relative)))
 
+(use-package eglot
+  :ensure nil
+  :bind
+  (("<leader> ca" . #'eglot-code-action)
+   ("<leader> cq" . #'eglot-code-action-quickfix)
+   ("<leader> ci" . #'eglot-code-action-inline)
+   ("<leader> ci" . #'eglot-code-action-rewrite)))
+
 (defmacro nto--with-tab-with (n)
   `(lambda () (setq-local tab-width ,n)))
 
