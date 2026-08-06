@@ -10,6 +10,7 @@
   (("<leader> na" . #'nto--intern-assets)
    ("<leader> nr" . #'denote-rename-file-using-front-matter)
    ("<leader> nu" . #'nto--unsorted-note)
+   ("<leader> nn" . #'denote)
    ("<leader> ni" . #'denote-insert-link)
    ("<leader> nl" . #'denote-insert-link)
    ("<leader> nb" . #'denote-backlinks)
