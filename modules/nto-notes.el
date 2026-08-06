@@ -15,8 +15,10 @@
    ("<leader> nl" . #'denote-insert-link)
    ("<leader> nb" . #'denote-backlinks)
    ("<leader> ng" . #'denote-grep)
-   ("<leader> nd" . #'denote-dired))
-
+   ("<leader> nd" . #'denote-dired)
+   ("<leader> n." . (lambda ()
+                      (interactive)
+                      (denote-sort-dired nil nil nil nil nil))))
   :config
   (defun nto--unsorted-note ()
     (interactive)
@@ -129,7 +131,6 @@
   (denote-agenda-insinuate))
 
 (use-package denote-solo
-  :disabled t
   :ensure (:host github :repo "pavlo/denote-solo")
   :config
   (denote-solo-mode 1)
