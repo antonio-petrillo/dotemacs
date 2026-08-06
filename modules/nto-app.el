@@ -13,6 +13,8 @@
   (setq buffer-to-pdf-directory (expand-file-name "~/Downloads/")))
 
 (use-package speed-type
-  :ensure t)
+  :ensure t
+  :custom
+  (speed-type-directory (expand-file-name "speed-type/" nto--cache)))
 
 (provide 'nto-app)
