@@ -82,7 +82,7 @@ The DWIM behaviour of this command is as follows:
   (auto-revert-mode)
   (setq completions-highlight-face nil)
 
-  (load-theme 'modus-operandi)
+  (load-theme nto--selected-theme)
 
   (global-set-key [remap backward-kill-word] #'nto--backward-kill-word)
   (global-set-key [remap keyboard-quit] #'nto--keyboard-quit-dwim)
