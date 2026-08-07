@@ -9,7 +9,9 @@
     (call-interactively #'self-insert-command)))
 
 (use-package compat
-  :ensure t)
+  :ensure t
+  :init
+  (require 'compat-31))
 
 (use-package vertico
   :ensure t

@@ -5,5 +5,7 @@ This config is just for me, but you may find something useful that I in my turn 
 * To setup
 + [[https://github.com/brett-lempereur/consult-xref-stack][consult-xref-stack]], C-i, C-o of evil
 + [[https://notmuchmail.org/][notmuch]] for email
+
+Note, remove ~(require 'compat-1)~ when emacs-31 comes out
   
 
