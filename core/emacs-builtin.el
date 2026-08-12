@@ -1,6 +1,15 @@
 ;; emacs-builtin.el -*- lexical-binding: t; -*-
 
-(defun nto--backward-kill-word()
+(defun nto--save-buffers-kill-terminal ()
+  "Same as `save-buffers-kill-terminal' but before killing the frame
+it ask for confirmation. (Unless in there is an emacs deamon running)"
+  (interactive)
+  (unless (daemonp)
+    (let ((quit? (y-or-n-p "Really want to quit emacs?")))
+      (when quit?
+        (save-buffers-kill-terminal)))))
+
+(defun nto--backward-kill-word ()
   "Same as `backward-kill-word' but if it is invoked on a white space character
 at the beginning of the line it will stop at it, furthermore if it is invoked
 on the beginning of the line it will go the end of the previous line instead
@@ -92,6 +101,7 @@ The DWIM behaviour of this command is as follows:
   (recentf-mode 1)
   (repeat-mode 1)
   :bind
+  ("C-x C-c" . #'nto--save-buffers-kill-terminal)
   ("C-S-i" . #'dabbrev-expand)
   ("<leader> ie" . #'emoji-list)
   ("<leader> ii" . #'emoji-insert)
