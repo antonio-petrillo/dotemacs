@@ -41,6 +41,7 @@
   (org-cycle-emulate-tab t)
   (org-export-headline-levels 8)
   (org-default-notes-file (make-temp-file "shadow-realm-org-file"))
+  (org-preview-latex-image-directory (expand-file-name "ltximg" nto--cache))
 
   (org-agenda-files nto--agenda-files)
   (org-agenda-span 'week)
@@ -85,7 +86,12 @@
 
   :config
   (add-hook 'org-mode-hook #'visual-line-mode)
-  (plist-put org-format-latex-options :scale 2.0))
+  (plist-put org-format-latex-options :scale 2.0)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((scheme . t))))
+
+(use-package geiser-guile :ensure t)
 
 (use-package org-mode
   :after org-mode
