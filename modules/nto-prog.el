@@ -56,23 +56,7 @@
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package ghostel
-  :ensure t
-  :if (eq system-type 'gnu/linux)
-  :bind
-  (("<leader> ot" . #'ghostel)))
-
-(use-package ghostel-eshell
-  :ensure nil
-  :after ghostel
-  :hook (eshell-load . ghostel-eshell-visual-command-mode))
-(use-package ghostel-compile
-  :ensure nil
-  :after ghostel
-  :hook (after-init . ghostel-compile-global-mode))
-(use-package ghostel-comint
-  :ensure nil
-  :after ghostel
-  :hook (after-init . ghostel-comint-global-mode))
+(use-package dockerfile-mode
+  :ensure t)
 
 (provide 'nto-prog)
