@@ -11,23 +11,24 @@
                             (display-line-numbers-mode 1)
 			    (toggle-truncate-lines 1)
                             (setq-local display-line-numbers 'relative)))
+(use-package emacs
+  :ensure nil
+  :bind
+  ("<leader> cc" . #'compile))
 
 (use-package eglot
   :ensure nil
-  :bind
-  (("<leader> ca" . #'eglot-code-action)
-   ("<leader> cq" . #'eglot-code-action-quickfix)
-   ("<leader> ci" . #'eglot-code-action-inline)
-   ("<leader> ci" . #'eglot-code-action-rewrite)))
+  :config
+  (evil-define-key 'normal 'eglot-mode-map
+    (kbd "<leader>cr") #'eglot-rename
+    (kbd "<leader>ci") #'eglot-code-action-inline
+    (kbd "<leader>cf") #'eglot-code-format
+    (kbd "<leader>gd") #'eglot-find-declaration
+    (kbd "<leader>gi") #'eglot-find-implementation
+    (kbd "<leader>gr") #'eglot-code-action-rewrite))
 
 (defmacro nto--with-tab-with (n)
   `(lambda () (setq-local tab-width ,n)))
-
-(require 'nto-lua)
-(require 'nto-odin)
-(require 'nto-elixir)
-(require 'nto-go)
-(require 'nto-data)
 
 (use-package devdocs
   :ensure t
@@ -58,5 +59,12 @@
 
 (use-package dockerfile-mode
   :ensure t)
+
+
+(require 'nto-lua)
+(require 'nto-odin)
+(require 'nto-elixir)
+(require 'nto-go)
+(require 'nto-data)
 
 (provide 'nto-prog)

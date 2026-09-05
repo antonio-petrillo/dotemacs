@@ -119,7 +119,7 @@
    ("<leader> nsr" . #'denote-sequence-reparent)
    ("<leader> nsc" . #'denote-sequence-convert))
   :custom
-  (denote-sequence-scheme 'numeric))
+  (denote-sequence-scheme 'alphanumeric))
 
 (use-package denote-agenda
   :ensure t

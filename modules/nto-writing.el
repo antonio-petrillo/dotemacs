@@ -48,7 +48,7 @@
   (([remap ispell-word] . #'jinx-correct)
    ("<leader> lc" . #'jinx-correct))
   :custom
-  (jinx-languages "en_US,it_IT"))
+  (jinx-languages "en_US en_GB it_IT"))
 
 (use-package google-translate
   :ensure t
