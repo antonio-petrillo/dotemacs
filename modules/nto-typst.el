@@ -1,5 +1,14 @@
 ;; nto-typst.el -*- lexical-binding: t; -*-
 
+(add-to-list
+ 'treesit-language-source-alist
+ `(typst
+   "https://github.com/uben0/tree-sitter-typst"
+   nil
+   nil
+   (when is-windows "C:/msys64/ucrt64/bin/gcc.exe")
+   (when is-windows "C:/msys64/ucrt64/bin/g++.exe")))
+
 (use-package typst-ts-mode
   :ensure (:type git :host codeberg :repo "meow_king/typst-ts-mode")
   :bind

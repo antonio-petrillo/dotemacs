@@ -63,7 +63,7 @@
         (user-error "The file to intern into asset must be a regular file"))))
 
   (setq denote-directory nto--notes-dir)
-  (setq denote-file-type 'org)
+  (setq denote-file-type 'markdown-toml)
   (setq denote-infer-keywords t)
   (setq denote-sort-keywords t)
   (setq denote-buffer-name-prefix "[Note]")
