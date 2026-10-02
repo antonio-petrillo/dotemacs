@@ -10,7 +10,7 @@
              mono-spaced-font "BigBlueTermPlus Nerd Font"
 	     proportionately-spaced-font "Roboto Serif")))
     ('windows-nt (progn
-		   (setq mono-spaced-font "Iosevka"
+		   (setq mono-spaced-font "BigBlue TerminalPlus"
 			 proportionately-spaced-font "Roboto"))))
 
   (set-face-attribute
