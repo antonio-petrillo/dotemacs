@@ -18,6 +18,7 @@
 
 (use-package eglot
   :ensure nil
+  :defer t
   :config
   (evil-define-key 'normal 'eglot-mode-map
     (kbd "<leader>cr") #'eglot-rename
@@ -32,6 +33,7 @@
 
 (use-package devdocs
   :ensure t
+  :defer t
   :custom
   (devdocs-data-dir (expand-file-name "devdocs" nto--cache))
   :bind
@@ -43,6 +45,7 @@
 
 (use-package editorconfig
   :ensure nil
+  :defer t
   :custom
   (editorconfig-trim-whitespaces-mode #'ws-butler-mode)
   :config
@@ -51,13 +54,16 @@
 
 (use-package ws-butler
   :ensure t
+  :defer t
   :hook (prog-mode . ws-butler-mode))
 
 (use-package rainbow-delimiters
   :ensure t
+  :defer t
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package dockerfile-mode
+  :defer t
   :ensure t)
 
 

@@ -2,6 +2,7 @@
 
 (use-package expand-region
   :ensure t
+  :defer t
   :bind
   (("C-=" . #'er/expand-region)))
 
@@ -11,6 +12,7 @@
 
 (use-package olivetti
   :ensure t
+  :defer t
   :bind
   (("<leader> tw" . #'olivetti-mode)
    :map olivetti-mode-map
@@ -41,6 +43,7 @@
 (use-package jinx
   :ensure t
   :if (not (eq system-type 'windows-nt))
+  :defer t
   :hook ((org-mode . jinx-mode)
          (markdown-mode . jinx-mode)
          (text-mode . jinx-mode))
@@ -52,6 +55,7 @@
 
 (use-package google-translate
   :ensure t
+  :defer t
   :custom
   (google-translate-translation-directions-alist
    '(("it" . "en") ("en" . "it")))
@@ -72,17 +76,13 @@
 
 (use-package powerthesaurus
   :ensure t
+  :defer t
   :bind
-  ("<leader> la" . #'powerthesaurus-lookup-antonyms-dwim)
-  ("<leader> ld" . #'powerthesaurus-lookup-definitions-dwim)
-  ("<leader> lp" . #'powerthesaurus-lookup-dwim)
-  ("<leader> lr" . #'powerthesaurus-lookup-related-dwim)
-  ("<leader> ls" . #'powerthesaurus-lookup-synonyms-dwim)
-  ("<leader> lS" . #'powerthesaurus-lookup-sentences-dwim)
-  ("<leader> lP" . #'powerthesaurus-transient))
+  ("<leader> lp" . #'powerthesaurus-transient))
 
 (use-package hl-todo
   :ensure t
+  :defer t
   :config
   (add-hook 'markdown-mode-hook #'hl-todo-mode)
   (add-hook 'org-mode-hook #'hl-todo-mode)
@@ -96,6 +96,7 @@
 
 (use-package focus
   :ensure t
+  :defer t
   :hook ((org-mode . focus-mode)
          (markdown-mode . focus-mode)
          (text-mode . focus-mode)))

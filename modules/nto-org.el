@@ -128,6 +128,7 @@
 (use-package evil-org
   :ensure t
   :after org
+  :defer t
   :hook (org-mode . evil-org-mode)
   :config
   (require 'evil-org-agenda)

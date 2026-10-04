@@ -29,21 +29,27 @@
    :height 1.0))
 
 (use-package doom-themes
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package ef-themes
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package doric-themes
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package year-1984-theme
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package anti-zenburn-theme
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package gruber-darker-theme
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (provide 'user-config)

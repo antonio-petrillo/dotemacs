@@ -3,17 +3,20 @@
 (use-package pdf-tools
   :ensure t
   :after latex
+  :defer t
   :config
   (pdf-tools-install)
   (add-hook 'pdf-view-mode-hook 'auto-revert-mode))
 
 (use-package buffer-to-pdf
   :ensure (:type git :host github :repo "protesilaos/buffer-to-pdf")
+  :defer t
   :config
   (setq buffer-to-pdf-directory (expand-file-name "~/Downloads/")))
 
 (use-package speed-type
   :ensure t
+  :defer t
   :custom
   (speed-type-directory (expand-file-name "speed-type/" nto--cache)))
 

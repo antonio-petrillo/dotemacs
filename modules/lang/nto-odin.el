@@ -12,6 +12,7 @@
 
 (use-package odin-mode
   :ensure (:host github :repo "antonio-petrillo/odin-mode")
+  :defer t
   :bind
   (:map odin-mode-map
         ("<localleader> f" . #'nto--run-odinfmt)))

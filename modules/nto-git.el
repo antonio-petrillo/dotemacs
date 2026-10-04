@@ -9,6 +9,7 @@
   :ensure t
   :if (not (eq system-type 'windows-nt))
   :after transient
+  :defer t
   :bind
   ("<leader> gg" . #'magit-status)
   ("<leader> gl" . #'magit-log)

@@ -2,6 +2,7 @@
 
 (use-package elixir-mode
   :ensure t
+  :defer t
   :bind
   (:map elixir-mode-map
         ("<localleader> f" . #'elixir-format)))

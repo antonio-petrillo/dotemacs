@@ -2,6 +2,7 @@
 
 (use-package auctex
   :ensure t
+  :defer t
   :init
   (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
         TeX-source-correlate-start-server t)
@@ -20,6 +21,7 @@
 
 (use-package cdlatex
   :ensure t
+  :defer t
   :after latex
   :hook ((LaTeX-mode . cdlatex-mode)
          (Latex-Mode . cdlatex-electricindex-mode))
@@ -28,6 +30,7 @@
 
 (use-package adaptive-wrap
   :ensure t
+  :defer t
   :hook (Latex-Mode . adaptive-wrap-prefix-mode)
   :init (setq-default adaptive-wrap-extra-indent 0))
 
@@ -37,10 +40,12 @@
   (TeX-command-sequence t t))
 
 (use-package auctex-cont-latexmk
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package evil-tex
   :ensure t
-  :hook (LaTeX-mode . evil-tex-mode))
+  :hook (LaTeX-mode . evil-tex-mode)
+  :defer t)
 
 (provide 'nto-latex)

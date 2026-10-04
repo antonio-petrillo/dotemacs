@@ -8,6 +8,7 @@
 
 (use-package aas
   :ensure t
+  :defer t
   :hook
   ((org-mode . aas-activate-for-major-mode)
    (markdown-mode . aas-activate-for-major-mode)

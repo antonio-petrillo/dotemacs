@@ -11,6 +11,7 @@
 
 (use-package typst-ts-mode
   :ensure (:type git :host codeberg :repo "meow_king/typst-ts-mode")
+  :defer t
   :bind
   (:map typst-ts-mode-map
         ("M-S-h" . #'typst-ts-mode-meta-decrease)
