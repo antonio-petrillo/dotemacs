@@ -10,5 +10,6 @@
 (require 'evil-setup)
 (require 'emacs-builtin)
 (require 'minibuffer-setup)
+;; (require 'tree-sitter-setup)
 
 (provide 'nto-core)

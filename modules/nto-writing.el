@@ -31,8 +31,10 @@
 
 (with-eval-after-load 'rotate-text
   (dolist (rotate-words '(("false" "true")
-                          ("nord" "east" "sud" "ovest")
+                          ("nord" "ovest" "sud" "east")
                           ("up" "down" "left" "right")
+                          ("previous" "next")
+                          ("width" "height")
                           ("top" "bottom")))
     (cl-pushnew rotate-words rotate-text-words))
   (dolist (rotate-symbols '(("var" "const")
@@ -42,7 +44,6 @@
 
 (use-package jinx
   :ensure t
-  :if (not (eq system-type 'windows-nt))
   :defer t
   :hook ((org-mode . jinx-mode)
          (markdown-mode . jinx-mode)
@@ -92,13 +93,10 @@
         ("C-c t p" . #'hl-todo-previous)
         ("C-c t n" . #'hl-todo-next)
         ("C-c t o" . #'hl-todo-occur)
-        ("C-c t i" . #'hl-todo-inser)))
+        ("C-c t i" . #'hl-todo-insert)))
 
 (use-package focus
   :ensure t
-  :defer t
-  :hook ((org-mode . focus-mode)
-         (markdown-mode . focus-mode)
-         (text-mode . focus-mode)))
+  :defer t)
 
 (provide 'nto-writing)

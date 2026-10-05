@@ -7,7 +7,6 @@
 
 (use-package magit
   :ensure t
-  :if (not (eq system-type 'windows-nt))
   :after transient
   :defer t
   :bind

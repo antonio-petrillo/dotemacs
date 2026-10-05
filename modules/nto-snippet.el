@@ -30,5 +30,22 @@
                     ";i" (nto--aas-expand-and-move "//" 1)
                     ";;4" (nto--aas-expand-and-move "$$$$" 2)
                     ";4" (nto--aas-expand-and-move "$$" 1)))
+(use-package tempel
+  :ensure t
+  :bind
+  ((("M-+" . tempel-complete)
+    ("M-*" . tempel-insert))
+   (:map tempel-map
+         ("<tab>" . #'tempel-next)
+         ("<backtab>" . #'tempel-previous)))
+  :init
+  (defun nto--setup-capf-templ ()
+    (setq-local completion-at-point-functions
+                (cons #'tempel-expand completion-at-point-functions)))
+
+  (dolist ((mode '(conf prog org markdown typst-ts)))
+    (let ((hook (intern (format "%s-mode-hook" (symbol-name mode)))))
+      (add-hook hook #'nto--setup-capf-templ))))
+
 
 (provide 'nto-snippet)
