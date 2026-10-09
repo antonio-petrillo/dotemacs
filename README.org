@@ -7,5 +7,9 @@ This config is just for me, but you may find something useful that I in my turn 
 + [[https://notmuchmail.org/][notmuch]] for email
 
 Note, remove ~(require 'compat-1)~ when emacs-31 comes out
+
+* Setup on windows
+Need MSYS2-ucrt64 versions of `gcc`, `libgccjit`, `pkg-config`, `enchant` to build everything correctly.
+
   
 
