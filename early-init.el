@@ -44,6 +44,7 @@
  mouse-wheel-scroll-amount '(2 ((shift) . hscroll)
                                (mouse-wheel-scroll-amount-horizontal 2))
  multisession-directory (file-name-concat nto--cache "multisession")
+ org-persist-directory (file-name-concat nto--cache "org-persist")
  pixel-scroll-precision-mode t
  pixel-scroll-precision-use-momentum nil
  read-answer-short t
@@ -55,6 +56,7 @@
  server-auth-dir (file-name-concat nto--cache "server")
  tab-always-indent 'complete
  tab-width 4
+ tramp-persistency-file-name (file-name-concat nto--cache "tramp")
  transient-history-file (file-name-concat nto--cache "transient/history.el")
  treesit-font-lock-level 4
  truncate-lines t
