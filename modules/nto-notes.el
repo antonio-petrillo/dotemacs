@@ -2,6 +2,7 @@
 
 (use-package denote
   :ensure t
+  :after (consult)
   :commands (denote-directory)
   :hook
   ((text-mode . denote-fontify-links-mode-maybe)
@@ -14,12 +15,30 @@
    ("<leader> ni" . #'denote-insert-link)
    ("<leader> nl" . #'denote-insert-link)
    ("<leader> nb" . #'denote-backlinks)
-   ("<leader> ng" . #'denote-grep)
    ("<leader> nd" . #'denote-dired)
+   ("<leader> nf" . #'nto--denote-find-file)
    ("<leader> n." . (lambda ()
                       (interactive)
                       (denote-sort-dired nil nil nil nil nil))))
   :config
+  (defun nto--denote-find-file ()
+    (interactive)
+    (let* ((dir (file-name-as-directory (car (denote-directories))))
+           (files (mapcar (lambda (f) (file-relative-name f dir))
+                                (denote-directory-files)))
+           (choice (consult--read
+                    files
+                    :prompt "Note: "
+                    :category 'file
+                    :require-match t
+                    :sort nil
+                    :state (consult--file-state)
+                    :lookup (lambda (selected _candidates &rest _)
+                              (when selected
+                                (expand-file-name selected dir))))))
+      (when choice
+        (find-file choice))))
+
   (defun nto--unsorted-note ()
     (interactive)
     (let* ((title (denote-title-prompt nil))
@@ -83,8 +102,8 @@
   :ensure t
   :after (denote consult)
   :bind
-  (("<leader> ncf" . #'consult-denote-find)
-   ("<leader> ncg" . #'consult-denote-grep))
+  (("<leader> nf" . #'consult-denote-find)
+   ("<leader> ng" . #'consult-denote-grep))
   :config
   (consult-denote-mode 1))
 
