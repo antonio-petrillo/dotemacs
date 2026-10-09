@@ -52,6 +52,7 @@
  scroll-conservatively  10
  scroll-margin 0
  scroll-preserve-screen-position t
+ server-auth-dir (file-name-concat nto--cache "server")
  tab-always-indent 'complete
  tab-width 4
  transient-history-file (file-name-concat nto--cache "transient/history.el")
