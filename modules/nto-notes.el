@@ -98,15 +98,6 @@
     (denote-journal-directory nto--journal-dir)
     (denote-journal-keyword "journal"))
 
-(use-package consult-denote
-  :ensure t
-  :after (denote consult)
-  :bind
-  (("<leader> nf" . #'consult-denote-find)
-   ("<leader> ng" . #'consult-denote-grep))
-  :config
-  (consult-denote-mode 1))
-
 (use-package denote-org
   :ensure t
   :after denote
