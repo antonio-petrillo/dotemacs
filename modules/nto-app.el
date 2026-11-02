@@ -20,4 +20,14 @@
   :custom
   (speed-type-directory (expand-file-name "speed-type/" nto--cache)))
 
+(use-package ledger-mode
+  :ensure t
+  :custom
+  ((ledger-binary-path "hledger")
+   (ledger-mode-should-check-version nil)
+   (ledger-report-auto-width nil)
+   (ledger-report-links-in-register nil)
+   (ledger-report-native-highlighting-arguments '("--color=always")))
+  :mode ("\\.journal\\'" "\\.hledger\\'" "\\.ledger\\'"))
+
 (provide 'nto-app)
